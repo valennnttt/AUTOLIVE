@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: autolive-streamer
+    env: node
+    plan: free
+    branch: main
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: ADMIN_SECRET
+        sync: false
+      - key: PORT
+        value: "10000"
